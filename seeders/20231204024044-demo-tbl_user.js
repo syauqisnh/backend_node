@@ -4,7 +4,7 @@ const saltRounds = 10;
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    const hashedPassword = await bcrypt.hash('Bekantan@bjm', saltRounds);
+    const hashedPassword = await bcrypt.hash('12345678', saltRounds);
     const level = await queryInterface.sequelize.query(
       `SELECT level_uuid FROM tbl_levels WHERE level_name = 'super administrator';`, 
       { type: queryInterface.sequelize.QueryTypes.SELECT }
@@ -18,9 +18,9 @@ module.exports = {
 
     return queryInterface.bulkInsert('tbl_user', [
       {
-        user_uuid: 'c2119049-d099-456a-8597-6b06eec9d9b3',
-        user_username: 'bekantan_administrator',
-        user_full_name: 'bekantan administrator',
+        user_uuid: '2ca673d8-5d7b-4de8-a7c9-485985711b31',
+        user_username: 'administrator',
+        user_full_name: 'administrator company',
         user_nohp: '',
         user_email: 'superadmin@gmail.com',
         user_address: '',
